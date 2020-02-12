@@ -3,10 +3,20 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { HotModuleReplacementPlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const typeScriptRules = {
+// const typeScriptRules = {
+//   test: /\.tsx?$/,
+//   use: 'ts-loader',
+//   exclude: /node_modules/
+// }
+// const babelRules = {
+//   test: /\.js$/,
+//   use: ['babel-loader'],
+//   exclude: /node_modules/
+// }
+const babelTsRules = {
   test: /\.tsx?$/,
-  use: 'ts-loader',
-  exclude: /node_modules/
+  use: ["babel-loader", "ts-loader"],
+  exclude: [join(__dirname, "node_modules")]
 }
 
 module.exports = {
@@ -29,13 +39,17 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'index.html')
-    }),
+      template: join(__dirname, 'public', 'index.html'),
+      // true或者body：所有JavaScript资源插入到body元素的底部
+      // head: 所有JavaScript资源插入到head元素中
+      // 所有静态资源css和JavaScript都不会注入到模板文件中
+      inject: false //不配置会，两次刷新页面
+    }), 
     new HotModuleReplacementPlugin()
   ],
   module: {
     rules: [
-      typeScriptRules
+      babelTsRules
     ]
   },
   resolve: {
