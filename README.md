@@ -41,3 +41,5 @@ log.show(userInfo('wmw'), '函数重载')
 log.show(userInfo(18)) //  my age is 18
 ```
 ![页面展示](http://blogqiniu.wangminwei.top/202002122116_235.png?/)
+
+**项目更多介绍见我的[博客](http://lemonlife.top/2020/02/09/typescript/)**
