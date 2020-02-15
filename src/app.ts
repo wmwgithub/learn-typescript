@@ -9,6 +9,15 @@ import Liskov from './liskov/Liskov';
 import Liskov2 from './liskov/Liskov2';
 import OCP from './ocp/OCP';
 import OCP2 from './ocp/OCP2';
+import QuickSort from './sort/QuickSort';
+import BabbleSort from './sort/BabbleSort';
+import SelectSort from './sort/SelectSort';
+import InsertSort from './sort/InsertSort';
+import ShellSort from './sort/ShellSort';
+import ShellSort2 from './sort/ShellSort2';
+import MergeSort from './sort/MergeSort';
+import RadixSort from './sort/RadixSort';
+import HeapSort from './sort/HeapSort';
 const log = new Log()
 function add(a: number, b: number): number {
   return a + b
@@ -36,4 +45,24 @@ log.show(userInfo(18)) //  my age is 18
 // Liskov.main()
 // Liskov2.main()
 // OCP.main()
-OCP2.main()
+// OCP2.main()
+// new QuickSort().main()
+// new BabbleSort().main()
+// new SelectSort().main()
+// new InsertSort().main()
+
+// console.time('shellSort')
+// new ShellSort().main()
+// console.timeEnd('shellSort')
+// console.time('shellSort2')
+// new ShellSort2().main()
+// console.timeEnd('shellSort2')
+// console.time('mergeSort')
+// new MergeSort().main()
+// console.timeEnd('mergeSort')
+// console.time('radixSort')
+// new RadixSort().main()
+// console.timeEnd('radixSort')
+// console.time('HeapSort')
+// new HeapSort().main()
+// console.timeLog('HeapSort')
