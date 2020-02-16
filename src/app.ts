@@ -18,6 +18,7 @@ import ShellSort2 from './sort/ShellSort2';
 import MergeSort from './sort/MergeSort';
 import RadixSort from './sort/RadixSort';
 import HeapSort from './sort/HeapSort';
+import CountSort from './sort/CountSort';
 const log = new Log()
 function add(a: number, b: number): number {
   return a + b
@@ -66,3 +67,6 @@ log.show(userInfo(18)) //  my age is 18
 // console.time('HeapSort')
 // new HeapSort().main()
 // console.timeLog('HeapSort')
+// console.time('countSort')
+// new CountSort().main()
+// console.timeEnd('countSort')
