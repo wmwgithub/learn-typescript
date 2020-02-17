@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue双向数据绑定</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script>
+
+  let data = {
+    name: 'wmw',
+    age: 21
+  }
+  let el = document.getElementById('root')
+  let template = `
+    <div  >
+    姓名：{{name}}
+    <br/>
+    年龄：{{age}}
+    <br />
+    <input type="text" v-model="name"  id='input1'>
+    </div>
+  `
+  function renderHTML() {
+    let res = template.replace(/\{\{\w+\}\}/g, key => {
+      key = key.slice(2, key.length - 2)
+      return data[key]
+    })
+    el.innerHTML = res
+  }
+  renderHTML()
+  function renderJS() {
+    Array.from(el.getElementsByTagName('input'))
+      .filter(ele => ele.getAttribute('v-model'))
+      .forEach(input => {
+        let key = input.getAttribute('v-model')
+        input.value = data[key]
+        input.onfocus = true
+        input.oninput = function () {
+          dataProxy[key] = this.value
+        }
+      })
+  }
+  renderJS()
+  let dataProxy = new Proxy(data, {
+    set(obj, name, value) {
+      // diff算法
+      obj[name] = value
+      renderHTML()
+      renderJS()
+    }
+  }) 
+</script>
+
+</html>

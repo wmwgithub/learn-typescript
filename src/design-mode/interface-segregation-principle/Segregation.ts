@@ -1,5 +1,6 @@
-import { log } from 'util';
 /// 接口隔离原则
+
+import { log } from 'util';
 
 interface Interface1 {
   operation1(): void;

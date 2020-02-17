@@ -9,7 +9,7 @@
     "strict": true,
   },
   "include": [
-    "src/*", "utils/Log.ts", "test/test.js"
+    "src/*", "utils/Log.ts", "test/test.js", "src/design-mode/demeter", "src/design-mode/single-responsibility", "src/design-mode/ocp", "src/design-mode/liskov", "src/design-mode/interface-segregation-principle", "src/design-mode/dependence-Inversion-Principle"
   ],
   "exclude": [
     "node_modules",
