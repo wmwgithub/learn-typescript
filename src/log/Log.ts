@@ -10,11 +10,7 @@ function bindLi(value: string, info?: string): void {
   ol.appendChild(li)
 }
 
-class HandleLog implements Log {
-  constructor() {
-
-  }
-
+class HTMLLog implements Log {
   show(params: LogType, info?: string) {
     if (typeof params === 'number') {
       bindLi(`${params}`, info)
@@ -24,4 +20,4 @@ class HandleLog implements Log {
   }
 }
 
-export default HandleLog
+export default HTMLLog

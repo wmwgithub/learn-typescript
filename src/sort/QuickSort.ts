@@ -9,6 +9,7 @@ class QuickSort implements Sort {
       let l = left // 左索引
       let r = right // 右索引
       let pivot = arr[Math.floor((l + r) / 2)]
+
       while (l < r) {
         //中线 在左边找 到一个比中间值大的值
         while (arr[l] < pivot) {
@@ -24,14 +25,17 @@ class QuickSort implements Sort {
         }
         // l<r的时候交换 索引 l,r 对应的值
         [arr[l], arr[r]] = [arr[r], arr[l]]
+
         if (arr[l] == pivot || arr[r] == pivot) {
           break;
         }
       }
+      
       if (l == r) {
         l += 1
         r -= 1
       }
+
       if (left < r) {
         quickSort(arr, left, r)
       }
@@ -43,7 +47,7 @@ class QuickSort implements Sort {
     return quickSort(arr, 0, arr.length - 1)
   }
   public main() {
-    console.log(this.method(testAray))
+    this.method(testAray)
   }
 }
 

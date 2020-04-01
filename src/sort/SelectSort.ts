@@ -20,7 +20,8 @@ class SelectSort implements Sort {
     throw new Error("Method not implemented.");
   }
   main(): void {
-    console.log(this.method(testAray))
+    this.method(testAray)
+    // console.log(this.method(testAray))
   }
 
 

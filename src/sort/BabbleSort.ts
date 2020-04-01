@@ -13,7 +13,8 @@ class BabbleSort implements Sort {
     return arr
   }
   main(): void {
-    console.log(this.method(testAray))
+    this.method(testAray)
+    // console.log(this.method(testAray))
   }
 
 }

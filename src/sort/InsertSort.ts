@@ -17,7 +17,8 @@ class InsertSort implements Sort {
     return resArr
   }
   main(): void {
-    console.log(this.method(testAray))
+    this.method(testAray)
+    // console.log(this.method(testAray))
   }
 
 

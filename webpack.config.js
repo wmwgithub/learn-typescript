@@ -14,13 +14,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //   exclude: /node_modules/
 // }
 const babelTsRules = {
-  test: /\.tsx?$/,
+  test: /\.(t|j)sx?$/,
   use: ["babel-loader", "ts-loader"],
   exclude: [join(__dirname, "node_modules")]
 }
 
 module.exports = {
-  mode: 'development',
+  // mode: 'production',
+  mode: "development",
   entry: {
     index: join(__dirname, 'src', 'app')
   },
@@ -44,7 +45,7 @@ module.exports = {
       // head: 所有JavaScript资源插入到head元素中
       // 所有静态资源css和JavaScript都不会注入到模板文件中
       inject: false //不配置会，两次刷新页面
-    }), 
+    }),
     new HotModuleReplacementPlugin()
   ],
   module: {
